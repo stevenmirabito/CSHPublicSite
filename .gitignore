@@ -29,6 +29,11 @@ resources/php/key.php
 # PDT-specific
 .buildpath
 
+#################
+## IntelliJ
+#################
+
+.idea
 
 #################
 ## Visual Studio
