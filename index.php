@@ -13,7 +13,7 @@ $container = new \Slim\Container();
 // Add the Twig service to the container
 $container['twig'] = function ($container) {
     $loader = new Twig_Loader_Filesystem('templates');
-    return new Twig_Environment($loader, ['cache' => 'cache']);
+    return new Twig_Environment($loader, []);
 };
 
 // Add our custom error handler to the container
