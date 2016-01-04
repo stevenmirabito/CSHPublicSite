@@ -1,4 +1,10 @@
 #################
+## Project Files
+#################
+resources/php/key.php
+cache/*
+
+#################
 ## Eclipse
 #################
 
@@ -15,7 +21,6 @@ local.properties
 .classpath
 .settings/
 .loadpath
-resources/php/key.php
 
 # External tool builders
 .externalToolBuilders/
