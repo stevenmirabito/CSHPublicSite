@@ -7,9 +7,6 @@
 // Load dependencies from Composer
 require 'vendor/autoload.php';
 
-use Psr\Http\Message\RequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
-
 // Create a Pimple container
 $container = new \Slim\Container();
 
@@ -51,7 +48,7 @@ $app = new \Slim\App($container);
  */
 
 // Permanently redirect paths with a trailing slash to their non-trailing counterpart
-$app->add(function (Request $request, Response $response, callable $next) {
+$app->add(function ($request, $response, $next) {
     $uri = $request->getUri();
     $path = $uri->getPath();
 
