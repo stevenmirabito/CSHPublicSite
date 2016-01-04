@@ -1,6 +1,4 @@
 <?php
-use Psr\Http\Message\RequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
 
 /*
  * Setup & Initialization
@@ -9,8 +7,20 @@ use Psr\Http\Message\ResponseInterface as Response;
 // Load dependencies from Composer
 require 'vendor/autoload.php';
 
+use Psr\Http\Message\RequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
+
+// Create a Pimple container
+$container = new \Slim\Container();
+
+// Add the Twig service to the container
+$container['twig'] = function($container) {
+    $loader = new Twig_Loader_Filesystem('templates');
+    return new Twig_Environment($loader, ['cache' => 'cache']);
+};
+
 // Create and configure Slim app
-$app = new \Slim\App;
+$app = new \Slim\App($container);
 
 /*
  * Slim Middleware
@@ -33,19 +43,14 @@ $app->add(function (Request $request, Response $response, callable $next) {
  * Slim Routes
  */
 
-// We only need one wildcard route for GET requests
+// Wildcard route for GET requests
 $app->get('/[{path:.*}]', function ($request, $response, $args) {
-    // Create and configure Twig
-    $loader = new Twig_Loader_Filesystem('templates');
-    $twig = new Twig_Environment($loader, array(
-        'cache' => false
-    ));
-
     // Load the template for the requested page
-    $template = $twig->loadTemplate('index.twig');
+    $template = $this->twig->loadTemplate('index.twig');
 
     // Render the template and return it to the app
-    return $response->write($template->render(array('name' => 'index')));
+    return $response->write($template->render(['name' => 'index']));
+    //return $response->write("Hi!");
 });
 
 $app->post('/contact', function ($request, $response, $args) {
