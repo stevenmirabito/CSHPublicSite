@@ -95,7 +95,7 @@ $app->get('/[{path:[a-zA-Z0-9\/\-\_]+}]', function ($request, $response, $args) 
     }
 
     // Make sure the visitor is not trying to access a shared template, thn see if there's a template for requested path
-    if ((strtok($args['path'] !== 'shared') && (file_exists(sprintf("templates/%s.twig", $args['path']))))) {
+    if ((strtok($args['path'], '/') !== 'shared') && (file_exists(sprintf("templates/%s.twig", $args['path'])))) {
         // Load the template for the requested page
         $template = $this->twig->loadTemplate(sprintf("%s.twig", $args['path']));
         return $response->write($template->render(['name' => basename($args['path'])]));
