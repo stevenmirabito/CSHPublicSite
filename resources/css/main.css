@@ -82,28 +82,6 @@
         
     
     }
-
-    .eboard-page div.row h5 {
-        font-weight: bold;
-    }
-
-    .eboard-thumbnail {
-        height: 250px;
-        width: 250px;
-        margin: 20px auto;
-    }
-
-    .eboard-thumbnail img {
-        position: absolute;
-        -webkit-transition: opacity 0.3s ease-in-out;
-        -moz-transition: opacity 0.3s ease-in-out;
-        -o-transition: opacity 0.3s ease-in-out;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .eboard-thumbnail img.real:hover {
-        opacity: 0;
-    }
     
     .sponsor-image{
         width:90%;
@@ -466,6 +444,28 @@ p{
     background-color: white;
     color:#B0197E;
     font-size:30px;
+}
+
+.eboard-page div.row h5 {
+    font-weight: bold;
+}
+
+.eboard-thumbnail {
+    height: 250px;
+    width: 250px;
+    margin: 20px auto;
+}
+
+.eboard-thumbnail img {
+    position: absolute;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.eboard-thumbnail img.real:hover {
+    opacity: 0;
 }
 
 .strike {
