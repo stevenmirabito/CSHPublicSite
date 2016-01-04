@@ -70,15 +70,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/main.js"></script>
-    {% block pageJS %}
-    {% endblock %}
+    {{ pageJS }}
 
     <!-- Google Analytics -->
     <script>
-        !function(c,s,h){c.GoogleAnalyticsObject=h;c[h]||(c[h]=function(){
-        (c[h].q=c[h].q||[]).push(arguments)});c[h].l=+new Date;var s=s.createElement('script'),
-        e=s.scripts[0];s.src='//www.google-analytics.com/analytics.js';e.parentNode.insertBefore(s,e)
-        }(window,document,'ga');ga('create','UA-75959-4','csh.rit.edu');ga('send','pageview');
+    !function(h,a,r,o,l,d){h.GoogleAnalyticsObject=r;h[r]||(h[r]=function(){
+    (h[r].q=h[r].q||[]).push(arguments)});h[r].l=+new Date;l=a.createElement(o);
+    d=a.getElementsByTagName(o)[0];l.src='//www.google-analytics.com/analytics.js';
+    d.parentNode.insertBefore(l,d)}(window,document,'ga','script');
+    ga('create','UA-75959-4','csh.rit.edu');ga('send','pageview');
     </script>
 </body>
 </html>

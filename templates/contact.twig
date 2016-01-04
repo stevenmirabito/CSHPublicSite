@@ -1,13 +1,13 @@
 {% set title = 'Contact' %}
 {% extends 'shared/framework.twig' %}
-{% block pageCSS %}
+{% set pageCSS %}
 <link href="/resources/css/alertify.css" rel="stylesheet">
-{% endblock %}
-{% block pageJS %}
+{% endset %}
+{% set pageJS %}
 <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.5/dist/js/alertify.js"></script>
 <script src="/resources/js/validator.js"></script>
 <script src="/resources/js/mailer.js"></script>
-{% endblock %}
+{% endset %}
 {% block content %}
         <div class="row">
             <div class="col-md-8 col-xs-12 col-sm-6">
