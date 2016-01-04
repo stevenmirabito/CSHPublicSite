@@ -83,6 +83,10 @@
     
     }
 
+    .eboard-page div.row h5 {
+        font-weight: bold;
+    }
+
     .eboard-thumbnail {
         height: 250px;
         width: 250px;
