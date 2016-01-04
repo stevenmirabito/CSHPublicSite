@@ -24,7 +24,7 @@ $container['errorHandler'] = function ($container) {
         return $container['response']
             ->withStatus(500)
             ->withHeader('Content-Type', 'text/html')
-            ->write($template->render(['code' => 500]));
+            ->write($template->render(['basePage' => 'error', 'page' => 'error', 'code' => 500]));
     };
 };
 
@@ -36,7 +36,7 @@ $container['notFoundHandler'] = function ($container) {
         return $container['response']
             ->withStatus(404)
             ->withHeader('Content-Type', 'text/html')
-            ->write($template->render(['code' => 404]));
+            ->write($template->render(['basePage' => 'error', 'page' => 'error', 'code' => 404]));
     };
 };
 
@@ -89,13 +89,16 @@ $app->get('/[{path:[a-zA-Z0-9\/\-\_]+}]', function ($request, $response, $args) 
     // If $path isn't set, set it to 'index' to load the homepage
     if (!isset($args['path'])) {
         $args['path'] = 'index';
+        $basePage = 'index';
+    } else {
+        $basePage = strtok($args['path'], '/');
     }
 
     // Make sure the visitor is not trying to access a shared template, thn see if there's a template for requested path
-    if ((strtok($args['path'], '/') !== 'shared') && (file_exists(sprintf("templates/%s.twig", $args['path'])))) {
+    if (($basePage !== 'shared') && (file_exists(sprintf("templates/%s.twig", $args['path'])))) {
         // Load the template for the requested page
         $template = $this->twig->loadTemplate(sprintf("%s.twig", $args['path']));
-        return $response->write($template->render(['name' => basename($args['path'])]));
+        return $response->write($template->render(['basePage' => $basePage, 'page' => basename($args['path'])]));
     } else {
         // Return a 404
         return $response->withStatus(404);

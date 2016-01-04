@@ -15,12 +15,12 @@
                 <ul class="nav navbar-nav csh-navbar-nav pull-right">
                     <li>
                         <a href="/">
-                            <div class="csh-navbar-nav-shift">Home</div>
+                            <div class="csh-navbar-nav-shift{% if basePage == 'index' %} link-active{% endif %}">Home</div>
                         </a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="/40th" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="/40th" class="dropdown-toggle disabled{% if basePage == '40th' %} link-active{% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="csh-navbar-nav-shift">40th Anniversary<span class="caret"></span></div>
                         </a>
                         <ul class="dropdown-menu">
@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="/about" class="dropdown-toggle disabled link-active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="/about" class="dropdown-toggle disabled{% if basePage == 'about' %} link-active{% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="csh-navbar-nav-shift">About <span class="caret"></span></div>
                         </a>
                         <ul class="dropdown-menu">
@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="/membership" class="nav-dropdown-toggle dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="/membership" class="nav-dropdown-toggle dropdown-toggle disabled {% if basePage == 'membership' %} link-active{% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="csh-navbar-nav-shift">Membership<span class="caret"></span></div>
                         </a>
                         <ul class="dropdown-menu">
@@ -53,7 +53,7 @@
 
                     <li>
                         <a href="/contact">
-                            <div class="csh-navbar-nav-shift">Contact</div>
+                            <div class="csh-navbar-nav-shift {% if basePage == 'contact' %} link-active{% endif %}">Contact</div>
                         </a>
                     </li>
                 </ul>
