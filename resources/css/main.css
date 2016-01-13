@@ -458,6 +458,10 @@ p { font-size: 16px }
     color: #FFF;
 }
 
+.sitemap-parent {
+    padding: 0;
+}
+
 .sitemap-link {
     color: #FFF;
     text-decoration: none;
