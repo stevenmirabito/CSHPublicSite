@@ -1,4 +1,18 @@
 RewriteEngine On
+
+# Rewrite to remove .html from URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# Redirect any ugly URLs to the pretty equivilent
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# Custom error pages
+ErrorDocument 404 /notfound.html
+ErrorDocument 500 /error.html
+ErrorDocument 502 /error.html
+ErrorDocument 503 /error.html
+ErrorDocument 504 /error.html

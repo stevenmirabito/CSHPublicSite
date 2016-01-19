@@ -1,0 +1,77 @@
+    </div>
+
+    <!-- Footer -->
+
+    <div class="sitemap-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h3 style="color:#FFF;">Site Map</h3>
+                    <ul class="sitemap sitemap-parent">
+                        <li><a href="/" class="sitemap-link">Home</a></li>
+                        <li><a href="/40th" class="sitemap-link">40th Information</a></li>
+                        <li><a href="/about" class="sitemap-link">About</a></li>
+                        <ul class="sitemap">
+                            <li><a href="/about/projects" class="sitemap-link">Projects</a></li>
+                            <li><a href="/about/alumni" class="sitemap-link">Alumni</a></li>
+                            <li><a href="/about/eboard" class="sitemap-link">Eboard</a></li>
+                            <li><a href="/about/sponsors" class="sitemap-link">Sponsors</a></li>
+                        </ul>
+                        <li><a href="/membership" class="sitemap-link">Membership</a></li>
+                        <ul class="sitemap">
+                            <li><a href="/membership/traditions" class="sitemap-link">Traditions</a></li>
+                            <li><a href="/membership/tour" class="sitemap-link">Tour</a></li>
+                            <li><a href="/membership/insights" class="sitemap-link">Insights</a></li>
+                        </ul>
+                        <li><a href="/contact" class="sitemap-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h3 style="color:#FFF;">Public Resources</h3>
+                    <ul class="sitemap sitemap-parent">
+                        <li><a href="/membership" class="sitemap-link">How to Apply</a></li>
+                        <li><a href="https://schedule.csh.rit.edu/" class="sitemap-link">CSH RIT Schedule Maker</a></li>
+                        <li><a href="https://github.com/{{ site.github_username }}" class="sitemap-link"><i class="fa fa-github"></i> CSH on GitHub</a></li>
+                        <li><a href="https://twitter.com/{{ site.history_twitter_username }}" class="sitemap-link"><i class="fa fa-twitter"></i> @{{ site.history_twitter_username }}</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h3 style="color:#FFF;">Member Resources</h3>
+                    <ul class="sitemap sitemap-parent">
+                        <li><a href="https://members.csh.rit.edu/" class="sitemap-link">Member's Portal</a></li>
+                        <li><a href="https://github.com/ComputerScienceHouse/Constitution/blob/master/articles.pdf?raw=true" class="sitemap-link">Constitution</a></li>
+                        <li><a href="https://github.com/ComputerScienceHouse/Constitution/blob/master/bylaws.pdf?raw=true" class="sitemap-link">By-Laws</a></li>
+                        <li><a href="https://www.facebook.com/groups/ComputerScienceHouse/" class="sitemap-link"><i class="fa fa-facebook"></i> CSH on Facebook</a></li>
+                        <li><a href="https://twitter.com/{{ site.opcomm_twitter_username }}" class="sitemap-link"><i class="fa fa-twitter"></i> @{{ site.opcomm_twitter_username }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="csh-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 hcenter">
+                    <a href="/contact" style="color:#FFF">webmaster@csh.rit.edu</a>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 hcenter">
+                    <a style="color:#FFF" href="https://github.com/{{ site.github_username }}/CSHPublicSite">Website on <i class="fa fa-github"></i> GitHub</a>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 hcenter">
+                    Copyright &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/resources/js/jquery.min.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/main.js"></script>
+	{{ page.javascript }}
+
+	{% include analytics.html %}
+</body>
+</html>
